@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Forbidden Facts</title>
+
+  <meta name="description" content="Forbidden Facts: An Investigation of Competing Objectives in Llama-2">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+  <link rel="stylesheet" href="css/app.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src='https://slideslive.com/embed_presentation.js'></script>
+
+  <style>
+    .nav-pills {
+      position: relative;
+      display: inline;
+    }
+
+    .imtip {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="main">
+    <div class="row">
+      <h2 class="col-md-12 text-center">
+        <b>
+          <font size="+6">Forbidden Facts</font>
+        </b></br>An Investigation of Competing Objectives in Llama-2</br>
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <ul class="list-inline">
+          <li>Tony T. Wang*</li>
+          <li>Miles Wang*</li>
+          <li>Kaivalya Hariharan*</li>
+          <li>Nir Shavit</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-12 text-center">
+      <ul class="list-inline">
+        <li>
+          <img src="img/sf.png" width="120" height="120" class="img-responsive">
+        </li>
+        <li>
+          <img src="img/cali.png" width="120" height="120" class="img-responsive">
+        </li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>
+          <b>New!</b> <a href="https://www.lesswrong.com/posts/Ei8q37PB3cAky6kaK/" target="_blank">
+            Blogpost with
+            high-level takeaways on
+            mechinterp.</a>
+        </h3>
+      </div>
+    </div>
+
+
+    <!-- Embed at later date. -->
+    <!-- <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>
+          Video
+        </h3>
+        <div id="presentation-embed-39013476" class="slp my-auto"></div>
+        <script>
+          embed = new SlidesLiveEmbed('presentation-embed-39013476', {
+            presentationId: '39013476',
+            autoPlay: false // change to true to autoplay the embedded presentation
+          });
+        </script>
+      </div>
+    </div> -->
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>
+          <a href="https://arxiv.org/abs/2312.08793" target="_blank">Paper</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="https://github.com/ed1d1a8d/prompt-injection-interp" target="_blank">Code</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="assets/poster.pdf" target="_blank">Poster</a>
+        </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>
+          Abstract
+        </h3>
+        <p class="text-justify">
+          LLMs often face competing pressures (for example helpfulness vs. harmlessness).
+          To understand how models resolve such conflicts,
+          we study Llama-2-chat models on the forbidden fact task.
+          Specifically, we instruct Llama-2 to truthfully complete a factual recall statement
+          while forbidding it from saying the correct answer.
+          This often makes the model give incorrect answers.
+          We decompose Llama-2 into 1000+ components,
+          and rank each one with respect to how useful it is for forbidding the correct answer.
+          We find that in aggregate,
+          around 35 components are enough to reliably implement the full suppression behavior.
+          However, these components are fairly heterogeneous and many operate using faulty heuristics.
+          We discover that one of these heuristics can be exploited
+          via a manually designed adversarial attack which we call The California Attack.
+          Our results highlight some roadblocks standing in the way of
+          being able to successfully interpret advanced ML systems.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>
+          Citation
+        </h3>
+        <div class="form-group col-md-10 col-md-offset-1">
+          <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{forbiddenfacts2023arxiv,
+  title={Forbidden Facts: An Investigation of Competing Objectives in Llama-2}, 
+  author={Tony T. Wang and Miles Wang and Kaivalya Hariharan and Nir Shavit},
+  maintitle={NeurIPS 2023},
+  booktitle={ATTRIB and SoLaR Workshops},
+  eprint={2312.08793},
+  archivePrefix={arXiv}
+}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <p class="text-justify">
+          This site's design is adapted from <a href="https://say-can.github.io/" target="_blank">say-can</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
